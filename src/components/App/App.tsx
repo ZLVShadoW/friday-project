@@ -5,6 +5,7 @@ import {RoutesPath} from '../pages/RoutesPath';
 import {useDispatch} from 'react-redux';
 import {useAppSelector} from '../../bll/store';
 import {check} from '../../bll/reducers/app-reducer';
+import {Button} from '../ui/Button/Button';
 
 export const App = () => {
     const greeting = useAppSelector<string>(state => state.app.greeting)
@@ -23,7 +24,7 @@ export const App = () => {
                     border: '1px solid #ddd',
                     color: 'red'
                 }}>{greeting}</div>
-                : <button onClick={() => dispatch(check())}>get greeting</button>}
+                : <Button onClick={() => dispatch(check())}>get greeting</Button>}
         </div>
     )
 }

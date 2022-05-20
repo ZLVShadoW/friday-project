@@ -1,0 +1,28 @@
+.btn {
+    font-size: 16px;
+    color: #fff;
+    border: 1px solid #36454F;
+    border-radius: 3px;
+    background: #36454F;
+    box-shadow: inset 0 0 3px #C3CED6, 0 0 3px #36454F;
+    padding: 7px 15px;
+    cursor: pointer;
+    transition: .3s ease-out;
+}
+
+.btn:hover {
+    color: hsla(0, 0%, 100%, .65);
+    box-shadow: inset 0 0 5px #000;
+}
+
+.btn:focus-visible{
+    outline: 3px dashed olive;
+}
+
+.btn:disabled {
+    color: #777;
+    background: #ddd;
+    border-color: transparent;
+    box-shadow: none;
+    cursor: auto;
+}
