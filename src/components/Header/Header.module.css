@@ -1,0 +1,10 @@
+.header {
+    display: flex;
+    align-items: center;
+    min-height: 55px;
+    border-bottom: 1px solid #334049;
+    background: linear-gradient(#334049, #495D6A);
+    box-shadow: 0 0 10px #334049;
+    padding: 0 50px;
+    margin-bottom: 15px;
+}
