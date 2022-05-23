@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {PATH} from '../pages/RoutesPath';
+import {ConfigPATH, PATH} from '../pages/RoutesPath';
 
 import styles from './NavBar.module.css'
 
@@ -11,6 +11,7 @@ export const NavBar = () => {
     return (
         <nav>
             <ul className={styles.list}>
+                {/*{ConfigPATH.map(el => <LiNavLinks key={el.path} path={el.path} />)}*/}
                 <li className={styles.listItem}><NavLink to={PATH.login} className={getClassName}>Login</NavLink></li>
                 <li className={styles.listItem}><NavLink to={PATH.newPassword} className={getClassName}>New password</NavLink></li>
                 <li className={styles.listItem}><NavLink to={PATH.passwordRecovery} className={getClassName}>Password recovery</NavLink></li>
@@ -23,14 +24,18 @@ export const NavBar = () => {
     )
 }
 
-// type LiNavLinksPropsType = {
-//     path: string
-// }
-//
-// const LiNavLinks: React.FC<LiNavLinksPropsType> = ({path}) => {
-//     return(
-//         <li>
-//             <NavLink to={path} />
-//         </li>
-//     )
-// }
+type LiNavLinksPropsType = {
+    path: string
+}
+
+const LiNavLinks: React.FC<LiNavLinksPropsType> = ({path}) => {
+
+    const getClassName = ({isActive}:{isActive: boolean}) => isActive ? `${styles.link} ${styles.active}` : `${styles.link}`
+    return(
+        <li className={styles.listItem}>
+            <NavLink to={path} className={getClassName}>{path}</NavLink>
+        </li>
+    )
+}
+
+//TODO 2 вариант (закоменчено), если импортировать массив конфига
